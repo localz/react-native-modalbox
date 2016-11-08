@@ -100,7 +100,7 @@ var ModalBox = React.createClass({
   componentWillMount: function() {
     this.createPanResponder();
     this.handleOpenning(this.props);
-    
+
   },
 
   componentWillReceiveProps: function(props) {
@@ -182,11 +182,11 @@ var ModalBox = React.createClass({
       this.animateBackdropOpen();
 
     this.state.isAnimateOpen = true;
-  
+
     requestAnimationFrame(() => {
       // Detecting modal position
       this.state.positionDest = this.calculateModalPosition(this.state.containerHeight, this.state.containerWidth);
-  
+
       this.state.animOpen = Animated.timing(
         this.state.position,
         {
@@ -202,6 +202,24 @@ var ModalBox = React.createClass({
       });
     })
 
+  },
+
+  /*
+   * Move up animation for the modal
+   */
+  animateMove: function(verticalAmount) {
+    requestAnimationFrame(() => {
+      this.state.positionDest = this.state.positionDest - upAmount;
+      this.state.animOpen = Animated.timing(
+        this.state.position,
+        {
+          toValue: this.state.positionDest,
+          duration: this.props.animationDuration,
+          easing: Easing.elastic(0.8)
+        }
+      );
+      this.state.animOpen.start();
+    });
   },
 
   /*
