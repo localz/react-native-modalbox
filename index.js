@@ -209,7 +209,7 @@ var ModalBox = React.createClass({
    */
   animateMove: function(verticalAmount) {
     requestAnimationFrame(() => {
-      this.state.positionDest = this.state.positionDest - upAmount;
+      this.state.positionDest = this.state.positionDest - verticalAmount;
       this.state.animOpen = Animated.timing(
         this.state.position,
         {
