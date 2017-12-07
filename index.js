@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var PropTypes = require('prop-types');
 var {
   View,
   StyleSheet,
@@ -38,25 +39,25 @@ var styles = StyleSheet.create({
 var ModalBox = React.createClass({
 
   propTypes: {
-    isOpen: React.PropTypes.bool,
-    isDisabled: React.PropTypes.bool,
-    startOpen: React.PropTypes.bool,
-    backdropPressToClose: React.PropTypes.bool,
-    swipeToClose: React.PropTypes.bool,
-    swipeThreshold: React.PropTypes.number,
-    swipeArea: React.PropTypes.number,
-    position: React.PropTypes.string,
-    entry: React.PropTypes.string,
-    backdrop: React.PropTypes.bool,
-    backdropOpacity: React.PropTypes.number,
-    backdropColor: React.PropTypes.string,
-    backdropContent: React.PropTypes.element,
-    animationDuration: React.PropTypes.number,
-    backButtonClose: React.PropTypes.bool,
+    isOpen: PropTypes.bool,
+    isDisabled: PropTypes.bool,
+    startOpen: PropTypes.bool,
+    backdropPressToClose: PropTypes.bool,
+    swipeToClose: PropTypes.bool,
+    swipeThreshold: PropTypes.number,
+    swipeArea: PropTypes.number,
+    position: PropTypes.string,
+    entry: PropTypes.string,
+    backdrop: PropTypes.bool,
+    backdropOpacity: PropTypes.number,
+    backdropColor: PropTypes.string,
+    backdropContent: PropTypes.element,
+    animationDuration: PropTypes.number,
+    backButtonClose: PropTypes.bool,
 
-    onClosed: React.PropTypes.func,
-    onOpened: React.PropTypes.func,
-    onClosingState: React.PropTypes.func,
+    onClosed: PropTypes.func,
+    onOpened: PropTypes.func,
+    onClosingState: PropTypes.func,
   },
 
   getDefaultProps: function () {
